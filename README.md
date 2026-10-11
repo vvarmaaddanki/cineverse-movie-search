@@ -2,7 +2,7 @@
 
 A responsive movie search web app built with **React** and the **TMDB API**. Search for any movie, view its details, and save favorites that stay after you refresh the page.
 
-**[Live Demo](https://cineverse-movie-search-git-main-varma-av.vercel.app/)** | **[GitHub Repo](YOUR_GITHUB_REPO_LINK)**
+**[Live Demo](https://cineverse-movie-search-git-main-varma-av.vercel.app/)** | **[GitHub Repo](https://github.com/vvarmaaddanki/cineverse-movie-search.git)**
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-build_tool-646CFF?logo=vite&logoColor=white)
@@ -127,8 +127,8 @@ npm run build
 
 ## Author
 
-**YOUR_NAME**
-[GitHub]() | [LinkedIn](https://www.linkedin.com/in/vvarmaaddanki/) | [Email](varmakbm9@gmail.com)
+**ADDANKI VENKATESH VARMA**
+[GitHub](https://github.com/vvarmaaddanki) | [LinkedIn](https://www.linkedin.com/in/vvarmaaddanki/) | [Email](varmakbm9@gmail.com)
 
 ## Acknowledgements
 
