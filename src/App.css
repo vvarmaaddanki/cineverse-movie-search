@@ -1,0 +1,284 @@
+/* ==============================
+   CINEVERSE - MAIN APP STYLES
+   ============================== */
+
+/* Global layout */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #141414;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main page */
+main {
+  width: 100%;
+  padding: 24px;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+/* Search area */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 30px;
+}
+
+.search-bar input {
+  width: 300px;
+  max-width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #222;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #f5c518;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #f5c518;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #ffda45;
+  transform: translateY(-1px);
+}
+
+/* Movie grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px 20px;
+  align-items: stretch;
+}
+
+/* Individual movie card */
+.card {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Highlight the entire card when the cursor enters it */
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #f5c518;
+  background: #1d1d1d;
+  box-shadow: 0 10px 28px rgba(245, 197, 24, 0.25);
+}
+
+/* Movie poster */
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 7px;
+  transition: filter 0.3s ease;
+}
+
+.card:hover img {
+  filter: brightness(1.08);
+}
+
+/* Movie title links: same color in every state */
+.card a,
+.card a:link,
+.card a:visited,
+.card a:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Smaller, consistent movie titles */
+.card h3 {
+  margin: 12px 0 8px;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Prevent browser link colors from changing the title */
+.card a h3,
+.card a:link h3,
+.card a:visited h3,
+.card a:hover h3,
+.card a:active h3 {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+}
+
+/* Release year */
+.card p {
+  margin: 8px 0 12px;
+  color: #cccccc;
+  font-size: 13px;
+}
+
+/* Favorite button */
+.card button {
+  width: auto;
+  max-width: 100%;
+  padding: 9px 13px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* Missing poster */
+.no-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 7px;
+  background: #252525;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+/* Loading and error messages */
+.error {
+  color: #ff7777;
+  margin: 16px 0;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: 16px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 520px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 10px;
+  }
+
+  .search-bar {
+    align-items: stretch;
+  }
+
+  .search-bar input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .card {
+    padding: 6px;
+  }
+
+  .card h3,
+  .card a h3 {
+    font-size: 13px !important;
+  }
+
+  .card button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+/* Force consistent movie title colors */
+.card a,
+.card a:link,
+.card a:visited,
+.card a:hover,
+.card a:active,
+.card a h3 {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Highlight the complete movie card on hover */
+.movie-grid .card {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 10px;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+}
+
+.movie-grid .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #f5c518 !important;
+  background-color: #242424 !important;
+  box-shadow: 0 0 25px rgba(245, 197, 24, 0.45) !important;
+  z-index: 5;
+}
+
+/* Consistent, smaller movie names */
+.movie-grid .card h3 {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}

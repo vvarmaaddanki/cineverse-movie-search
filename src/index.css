@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f5f5;
+  background: #101014;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #101014;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 20px 6%;
+  background: #18181f;
+  border-bottom: 1px solid #292932;
+}
+
+nav a {
+  color: #dedee8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #e8b44a;
+}
+
+nav .brand {
+  color: #e8b44a;
+  font-size: 25px;
+  font-weight: 800;
+  margin-right: auto;
+}
+
+main {
+  width: min(1200px, 90%);
+  margin: 36px auto;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.movie-grid img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.movie-grid > * {
+  min-width: 0;
+}
+
+button,
+input {
+  font: inherit;
+  padding: 12px 14px;
+  border-radius: 7px;
+}
+
+input {
+  background: #20202a;
+  border: 1px solid #424250;
+  color: white;
+}
+
+button {
+  background: #e8b44a;
+  border: none;
+  color: #171717;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #f5c86b;
+}
+
+.movie-details img {
+  width: min(300px, 100%);
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.movie-details p {
+  line-height: 1.7;
+  color: #d0d0da;
+}
+
+@media (max-width: 600px) {
+  nav {
+    gap: 14px;
+    padding: 16px 5%;
+  }
+
+  nav .brand {
+    font-size: 20px;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+.card.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.card.movie-card a {
+  color: white;
+  text-decoration: none;
+}
